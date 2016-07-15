@@ -1,0 +1,574 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Verdana';
+    padding: 0;
+    margin: 0;
+}
+
+table,th,tr,td{
+	border: 1px solid black;
+	border-collapse:collapse;
+	text-align:center;
+}
+
+table,.tabla-compra{
+    width: 90%;
+    padding: 2% 0;
+    clear: both;
+    margin: 0 auto;
+}
+
+th{
+    width: 25%;
+    background-color: black;
+    color: white;
+}
+
+th,td{
+    padding: 10px 0;
+}
+
+.cspan td:first-child {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.subTotal td{
+    background-color: gainsboro;
+    font-weight: bold;
+}
+
+.total td{
+    background-color: #414141;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.total td:last-child{
+    font-size: 1.2em;
+}
+
+.descuento td{
+    background-color: rgba(201, 235, 255, 0.6);
+    color: black;
+}
+
+.iva td{
+    background-color: rgba(255, 161, 161, 0.6);
+}
+
+/*Form*/
+
+.submit{
+	border: 1px solid black;
+	padding:5px;
+	margin: 10px 0 10px 10px;
+	width: 10%;
+	background-color: black;
+	color: white;
+	font-weight:bold;
+}
+
+.submit:hover{
+	background-color: white;
+	color: black;
+}
+
+header, footer{
+    position: relative;
+    overflow: hidden;
+}
+
+header{
+    background-color: dimgray;
+    width: 50%;
+    height: 80px;
+    float: left;
+}
+
+header .logo{
+    color: white;
+    padding-left: 2%;
+}
+
+nav{
+    width:50%;
+    height: 80px;
+    float: left;
+    background-color: dimgray;
+    margin-bottom: 2%;
+}
+
+nav ul{
+	padding: 1.5% 0;
+}
+
+nav ul li{
+	float:left;
+	width:22.25%;
+	margin-right: 2%;
+    list-style: none;
+    text-align: center;
+    border: 1px solid white;
+    padding: 1% 0;
+}
+
+nav ul li:last-child{
+	margin:0;
+}
+
+nav ul li a{
+	text-decoration:none;
+    color: white;
+}
+
+nav ul li:hover{
+    background-color: white;
+}
+
+nav ul li:hover a{
+    color: dimgray;
+}
+
+footer{
+    width: 100%;
+    margin: 2% 0 0 0;
+    padding: 1% 0;
+    background-color: dimgray;
+    position: relative;
+}
+
+footer p{
+    text-align: center;
+    color: white;
+}
+
+.registro{
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2% 0;
+}
+
+.title-page{
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.registro-form{
+    background-color: #ebebeb;
+    padding: 3%;
+    overflow: hidden;
+}
+
+.two-col{
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+}
+
+.two-col:nth-child(even){
+    margin-right: 0;
+}
+
+.one-col{
+    width: 60%;
+    float: left;
+    clear: both;
+}
+
+option{
+    background-color: white;
+}
+
+.input-divider{
+    width: 100%;
+    margin: 2% 0 0 0 ;
+    border: 1px dotted black;
+}
+
+input, select{
+    margin: 0.5% 0;
+    padding: 0.5% 1%;
+    background-color: #f8f8f8;
+    border: 1px solid black;
+    color: black;
+    font-size: 1em;
+}
+
+input:focus{
+    outline: 0;
+}
+
+input.submit{
+    width: 40%;
+    float: left;
+    clear: both;
+    background-color: dimgray;
+    color: #ebebeb;
+    border: 1px solid dimgray;
+    cursor: pointer;
+}
+
+.table-index{
+    margin: 0 auto;
+}
+
+.ficha-prod{
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid lightgrey;
+    padding: 2%;
+}
+
+.ficha-prod figure{
+    overflow: hidden;
+    width: 18%;
+    float: left;
+    margin: 0;
+    margin-right: 2%;
+    margin-top: 2.5%;
+    clear: both;
+    overflow: hidden;
+}
+
+.ficha-prod figure img{
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+.ficha-prod .prod-cod{
+    font-size: 1.2em;
+    color: darkgray;
+}
+
+.desc-prod{
+    width: 80%;
+    float: left;
+    padding: 0 0 4% 0;
+}
+
+.min-info{
+    width: 100%;
+    list-style: none;
+    clear: both;
+    padding: 2% 0 4% 0;
+    text-align: center;
+}
+
+.min-info li{
+    float: left;
+    width: 20%;
+    background-color: darkgray;
+    color: white;
+    border-left: 3px solid white;
+    padding: 0.5% 0;
+}
+
+.min-info li:first-child{
+    border: 0;
+}
+
+.compra{
+    padding: 0 0 2% 0;
+    overflow: hidden;
+    clear: both;
+    background-color: lightgray;
+}
+
+.compra div{
+    width: 50%;
+    float: left;
+    text-align: center;
+    margin-bottom: 4%;
+    border: 1px solid black;
+}
+
+.compra .right{
+    padding-bottom: 1%;
+    border-left: 0;
+}
+
+#comprarbtn{
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+#comprarbtn:hover{
+    background-color: white;
+    color: black;
+}
+
+.ficha-prod .frase-prom{
+    text-transform: capitalize;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+.paginacion,.busqueda,.res-busqueda{
+	text-align:center;
+}
+
+.paginacion{
+    padding: 2% 0 0 0;
+}
+
+.res-busqueda{
+    width: 100%;
+    background-color: grey;
+    color: white;
+    padding: 5px 0;
+}
+
+.upper:first-letter{
+    text-transform: uppercase
+}
+
+.mensaje-corr, .mensaje-error{
+    text-align: center;
+}
+
+.mensaje-corr{
+    color: green;
+}
+
+.mensaje-error{
+    color: red;
+}
+
+#cantidadtxt{
+    width: 40%;
+}
+
+#img-index{
+    width: 20%;
+    display: inline-block;
+    clear: both;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.compra .center{
+    text-align: center;
+    width: 100%;
+    clear: both;
+}
+
+.btn{
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 10px;
+    background-color: lightgrey;
+}
+
+.btn, .btn a{
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.btn a{
+    font-size: 1.2em;
+}
+
+.modificar{
+    border: 1px solid black;
+}
+
+.modificar a{
+    color: black;
+    text-decoration: none;
+}
+
+.modificar:hover a{
+    color: white;
+}
+
+.btn#modificar:hover,
+.btn.modificar:hover{
+    background-color: green;
+    border: 1px solid green;
+    color: white;
+}
+
+.btn#eliminar:hover,
+.btn.eliminar:hover{
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+}
+
+
+/*usuarios*/
+.user-table{
+    width: 90%;
+    margin: 0 5%;
+}
+
+.user-table th{
+    width: 20%;
+}
+
+.user-table .th-mini{
+    width: 13.3%;
+}
+
+.usuario{
+    width: 50%;
+    margin: 0 25%;
+}
+
+.form-usuario{
+    width: 40%;
+    margin: 0 30%;
+    text-align: center;
+}
+
+.btns{
+    clear: both;
+}
+
+.out{
+    width: 10%;
+    float: left;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    background-color: black;
+    position: relative;
+    margin: 10px 5% 10px 0 ;
+}
+
+.sesion-user .par-ses{
+    width: 20%;
+    float: left;
+    margin-left: 65%;
+}
+
+.sesion-user{
+    width: 100%;
+    float: right;
+    padding: 0;
+    margin:  0 0 20px 0;
+    background-color: darkgrey;
+}
+
+.contacto{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contacto h1{
+    text-align: center;
+}
+
+.contacto form{
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(183, 183, 183, 0.5);
+    padding: 20px;
+}
+
+.contacto input, .contacto textarea{
+    margin: 10px 0;
+    background-color: white;
+    outline: 1px solid #c1c1c1;
+}
+
+.contacto input:focus, .contacto textarea:focus{
+    outline: 2px solid black;
+}
+
+.contacto .input-100, .contacto textarea, textarea{
+    width: 100%;
+}
+
+.contacto textarea, textarea{
+    resize: none;
+    font-size: 1em;
+    padding: 5px;
+}
+
+.contacto .input-50, .contacto .input-100{
+    padding: 5px;
+}
+
+.contacto .input-50{
+    width: 48%;
+    float: left;
+    margin-right: 4%;
+}
+
+.contacto .input-50:nth-child(2){
+    margin-right: 0;
+}
+
+.contacto .submitbtn{
+    width: 20%;
+    background-color: dimgray;
+    color: white;
+    border: 2px solid dimgray;
+    cursor: pointer;
+    margin: 0 40%;
+    text-align: center;
+}
+
+.contacto .submitbtn:hover{
+    background-color: transparent;
+    color: dimgray;
+}
+
+.usuario img{
+    width: 50%;
+}
+
+.title-page{
+    text-align: center;
+}
+
+.agregar-btn{
+    background-color: dimgray;
+    border: 1px solid black;
+    width: 20%;
+    margin: 20px 40%;
+}
+
+.agregar-btn a{
+    color: white;
+    text-decoration: none;
+}
+
+.agregar-btn:hover{
+    background-color: white;
+}
+
+.agregar-btn:hover a{
+    color: black;
+}
+
+.modificar-registro{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+textarea{
+    font-family: 'Verdana';
+    font-size: 1em;
+}
