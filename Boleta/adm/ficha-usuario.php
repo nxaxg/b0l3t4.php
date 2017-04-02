@@ -6,14 +6,14 @@
     }
 
     if(isset($_POST[eliminar]) && $_POST[eliminar]<>""){
-        $eliminar_query = "DELETE FROM `usuarios` WHERE `usuarios`.`id_usuario` = '$_POST[id_us]'";
+        $eliminar_query = "DELETE FROM `rayitasdb_usuarios` WHERE `rayitasdb_usuarios`.`id_usuario` = '$_POST[id_us]'";
         $connection->query($eliminar_query);
         $ID = $connection->insert_id; 
         if($connection->query($eliminar_query))header("Location: usuarios.php");
     }
 
 
-    $query_sel = "SELECT * FROM `usuarios` where id_usuario = '$_GET[id_user]'";
+    $query_sel = "SELECT * FROM `rayitasdb_usuarios` where `id_usuario` = '$_GET[id_user]'";
     $result_sel = $connection->query($query_sel);
     $user = $result_sel->fetch_assoc();
 

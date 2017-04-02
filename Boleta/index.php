@@ -25,14 +25,14 @@ $inicio = $page * $max;
 //si se realiza la busqueda
 if(isset($_GET[buscar])){
     //query para buscar segùn campo de busqueda
-    $query = "SELECT * FROM `productos` WHERE `$filtro` LIKE '%$buscar%' ORDER BY `id_producto` asc";
+    $query = "SELECT * FROM `rayitasdb_productos` WHERE `$filtro` LIKE '%$buscar%' ORDER BY `id_producto` asc";
     $query_limit = $query." limit $inicio,$max";
     //envìa querybuscar como query a la BD
     $resource = $connection->query($query_limit);
     //mensaje segun resultado de busqueda
     $busqueda = "<p class='res-busqueda'>Resultado de búsqueda por <strong>$filtro: '$buscar'</strong>.</p>";
 }else{
-    $query = "SELECT * FROM `productos` where 1 order by `id_producto` asc";
+    $query = "SELECT * FROM `rayitasdb_productos` where 1 order by `id_producto` asc";
     $query_limit = $query." limit $inicio,$max";
     //de no realizar busqueda, que muestre todos los resultados de la BD
     $resource = $connection->query($query_limit);

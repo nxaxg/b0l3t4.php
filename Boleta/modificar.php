@@ -3,19 +3,16 @@
 $id_comp = $_GET['id_comp'];
 $cod_prod = $_GET['cod_prod'];
 
-$query_prod = "select * from productos where codigo = ".$cod_prod;
+$query_prod = "select * from `rayitasdb_productos` where `codigo` = ".$cod_prod;
 $resultado_prod = $connection->query($query_prod);
 $producto_cod= $resultado_prod->fetch_assoc();
 
-$query_comp = "select * from compras where id_compra = ".$id_comp;
+$query_comp = "select * from `rayitasdb_compras` where `id_compra` = ".$id_comp;
 $resultado_comp = $connection->query($query_comp);
 $compra = $resultado_comp->fetch_assoc();
 
-
-
-
 if(isset($_POST[modificar]) && $_POST[modificar]=="modificar"){
-    $modificar_query = "UPDATE `compras` SET `cantidad` = '$_POST[cantidad]' WHERE `id_compra` = '$id_comp'";
+    $modificar_query = "UPDATE `rayitasdb_compras` SET `cantidad` = '$_POST[cantidad]' WHERE `id_compra` = '$id_comp'";
     $connection->query($modificar_query);
     $ID = $connection->insert_id; 
     if($connection->query($modificar_query))header("Location: boleta.php");

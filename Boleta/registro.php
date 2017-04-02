@@ -14,7 +14,7 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "INSERT INTO `usuarios` (`nombre`, `email`, `telefono`, `pais`, `direccion`, `username`, `password`) VALUES ('$nombre', '$mail', '$fono', '$pais', '$direccion', '$username', '$password')";
+    $query = "INSERT INTO `rayitasdb_usuarios` (`nombre`, `email`, `telefono`, `pais`, `direccion`, `username`, `password`) VALUES ('$nombre', '$mail', '$fono', '$pais', '$direccion', '$username', '$password')";
     $connection->query($query);
      $ID = $connection->insert_id;
     if($ID)header("Location: index.php");

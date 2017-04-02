@@ -2,15 +2,12 @@
     
 //consulta si sesión ya está iniciada
 if(!isset($_SESSION))session_start();
-
-
 if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password]) && $_POST[password]<>"") ){
-    $query="SELECT * FROM usuarios where username='$_POST[username]' AND password='$_POST[password]'";
+    $query="SELECT * FROM `rayitasdb_usuarios` where `username`='$_POST[username]' AND `password`='$_POST[password]'";
     $resultado=$connection->query($query);
     
     if($total = $resultado->num_rows){
          $usuario = $resultado->fetch_assoc();
-            
          $_SESSION[user_id]=$usuario[id_usuario];
          $_SESSION[user_name]=$usuario[nombre];
          $_SESSION[user_mail]=$usuario[email];
@@ -23,9 +20,6 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
      $error="Usuario/Clave no registrados";
     }
 }
-
-
-
 ?>
     <!DOCTYPE html>
     <html lang="en">

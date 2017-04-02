@@ -1,4 +1,4 @@
-<?php require_once("DBconnection.php")?>
+<?php require_once("DBconnection.php");?>
 <?php
     
     
@@ -8,11 +8,11 @@
     }
     
     if(isset($_GET[id_comp]) && $_GET[id_comp]<>""){
-        $eliminar_query = "DELETE FROM `compras` WHERE `compras`.`id_compra` = '$_GET[id_comp]'";
+        $eliminar_query = "DELETE FROM `rayitasdb_compras` WHERE `rayitasdb_compras`.`id_compra` = '$_GET[id_comp]'";
         $connection->query($eliminar_query);
     }
     
-    $consulta = "SELECT * FROM `compras` WHERE 1 and cliente='$_SESSION[user_id]'";
+    $consulta = "SELECT * FROM `rayitasdb_compras` WHERE 1 and cliente='$_SESSION[user_id]'";
     $resultado = $connection->query($consulta);
     $total = $resultado->num_rows;
     
@@ -85,10 +85,10 @@
             <?php
             if($descuento){
                 $descuento = $subtotal * 0.10;
-                $cadenaDscto = "<tr class='cspan descuento'>
-                                    <td colspan='3'>-Descuento 10%</td>
-                                    <td>". "$" . number_format($descuento, 0, ",", ".") . "</td>
-                                </tr>";
+                $cadenaDscto .= '<tr class="cspan descuento">';
+                $cadenaDscto .=      '<td colspan="3">-Descuento 10%</td>';
+                $cadenaDscto .=      '<td>' . '$' . number_format($descuento, 0, ',', '.') . '</td>';
+                $cadenaDscto .= '</tr>';
             };
             ?>
             <?php echo $cadenaDscto;?>
