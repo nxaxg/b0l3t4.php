@@ -6,11 +6,11 @@
     }
 
     if(isset($_GET[id_user]) && $_GET[id_user]<>""){
-        $eliminar_query = "DELETE FROM `usuarios` WHERE `usuarios`.`id_usuario` = '$_GET[id_user]'";
+        $eliminar_query = "DELETE FROM `rayitasdb_usuarios` WHERE `rayitasdb_usuarios`.`id_usuario` = '$_GET[id_user]'";
         $connection->query($eliminar_query);
     }
 
-    $query_sel = "SELECT * FROM `usuarios` where 1";
+    $query_sel = "SELECT * FROM `rayitasdb_usuarios` where 1";
     $result_sel = $connection->query($query_sel);
     $total_sel = $result_sel->num_rows;
 

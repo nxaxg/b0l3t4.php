@@ -1,5 +1,4 @@
-<?php require_once("DBconnection.php")?>
-<?php
+<?php require_once("DBconnection.php");
     
 if(!isset($_SESSION))session_start();
         if(!$_SESSION[user_id]){
@@ -13,7 +12,7 @@ if(isset($_POST[comprar]) && $_POST[comprar] == "comprar"){
     $precio = $_POST['precio'];
     $cantidad = $_POST['cantidad'];
 
-    $queryinsert = "INSERT INTO `compras`(`cliente`, `codigo`, `nombre_producto`, `precio`, `cantidad`) values('$cliente', '$codigo', '$nombre_producto', '$precio', '$cantidad')";
+    $queryinsert = "INSERT INTO `rayitasdb_compras`(`cliente`, `codigo`, `nombre_producto`, `precio`, `cantidad`) values('$cliente', '$codigo', '$nombre_producto', '$precio', '$cantidad')";
         
     $connection->query($queryinsert);
     $mensaje = "exito";
@@ -29,7 +28,7 @@ if(isset($_POST[comprar]) && $_POST[comprar] == "comprar"){
 $id_producto = $_GET['id_prod'];
 $self = $_SERVER['PHP_SELF'];
 
-$query = "select * from productos where id_producto = ".$id_producto;
+$query = "select * from `rayitasdb_productos` where `id_producto` = ".$id_producto;
 $resultado = $connection->query($query);
 $producto = $resultado->fetch_assoc();
 
