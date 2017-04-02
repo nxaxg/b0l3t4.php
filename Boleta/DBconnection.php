@@ -1,8 +1,17 @@
 <?php
+
 $host="localhost";
-$user="nicolas_user";
-$pass="white-pony";
-$database="nicolas_general";
+$user="rayitas";
+$pass="raya123";
+$database="rayitas";
+
+
+/*
+$host="localhost";
+$user="nicolas_prueba";
+$pass="rayitapassword";
+$database="nicolas_rayitas";
+*/
 
 
 $connection = new mysqli($host, $user, $pass, $database);

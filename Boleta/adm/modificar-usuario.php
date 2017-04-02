@@ -5,14 +5,14 @@
         $_SESSION[volver]=$_SERVER['PHP_SELF']."?".$_SERVER['QUERY_ STRING']; header("Location: login.php");
     }
     
-    $query_sel = "SELECT * FROM `rayitasdb_usuarios` where `id_usuario` = '$_GET[id_user]'";
+    $query_sel = "SELECT * FROM `usuarios` where id_usuario = '$_GET[id_user]'";
     $result_sel = $connection->query($query_sel);
     $user = $result_sel->fetch_assoc();
 
 
     if(isset($_POST[modificar]) && $_POST[modificar]=="modificar"){
         $usuario_id = $_POST[id_us];
-    $modificar_query = "UPDATE `rayitasdb_usuarios` SET `nombre` = '$_POST[nombre]',`email` = '$_POST[mail]',`telefono` = '$_POST[fono]',`pais` = '$_POST[pais]',`direccion` = '$_POST[direccion]',`username` = '$_POST[username]',`password` = '$_POST[password]' WHERE `id_usuario` = '$_POST[id_us]'";
+    $modificar_query = "UPDATE `usuarios` SET `nombre` = '$_POST[nombre]',`email` = '$_POST[mail]',`telefono` = '$_POST[fono]',`pais` = '$_POST[pais]',`direccion` = '$_POST[direccion]',`username` = '$_POST[username]',`password` = '$_POST[password]' WHERE `id_usuario` = '$_POST[id_us]'";
     $connection->query($modificar_query);
     $ID = $connection->insert_id; 
     if($connection->query($modificar_query))header("Location: ficha-usuario.php?id_user=$usuario_id");

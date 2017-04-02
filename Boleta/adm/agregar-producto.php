@@ -16,7 +16,7 @@
     $precio = $_POST['precio'];
     $fecha = date("Y-m-d H:i:s");
 
-    $query = "INSERT INTO `rayitasdb_productos` (`nombre`, `codigo`, `categoria`, `frase_promocional`, `descripcion`, `color`, `precio`, `disponibilidad`,`promocion`,`fecha`) VALUES ('$nombre', '$codigo', '$categoriasel', '$fraseprom', '$descripcion', '$colorsel', '$precio','1','1','$fecha')";
+    $query = "INSERT INTO `productos` (`nombre`, `codigo`, `categoria`, `frase_promocional`, `descripcion`, `color`, `precio`, `disponibilidad`,`promocion`,`fecha`) VALUES ('$nombre', '$codigo', '$categoriasel', '$fraseprom', '$descripcion', '$colorsel', '$precio','1','1','$fecha')";
     $connection->query($query);
      
      $ID = $connection->insert_id;

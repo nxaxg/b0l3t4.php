@@ -6,14 +6,14 @@
     }
 
     if(isset($_POST[eliminar]) && $_POST[eliminar]<>""){
-        $eliminar_query = "DELETE FROM `rayitasdb_productos` WHERE `rayitasdb_productos`.`id_producto` = '$_POST[id_prod]'";
+        $eliminar_query = "DELETE FROM `productos` WHERE `productos`.`id_producto` = '$_POST[id_prod]'";
         $connection->query($eliminar_query);
         $ID = $connection->insert_id; 
         if($connection->query($eliminar_query))header("Location: productos.php");
     }
 
 
-    $query_sel = "SELECT * FROM `rayitasdb_productos` where `id_producto` = '$_GET[id_prod]'";
+    $query_sel = "SELECT * FROM `productos` where id_producto = '$_GET[id_prod]'";
     $result_sel = $connection->query($query_sel);
     $prod = $result_sel->fetch_assoc();
 

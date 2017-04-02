@@ -8,11 +8,11 @@
 
 
     if(isset($_GET[id_prod]) && $_GET[id_prod]<>""){
-        $eliminar_query = "DELETE FROM `rayitasdb_productos` WHERE `rayitasdb_productos`.`id_producto` = '$_GET[id_prod]'";
+        $eliminar_query = "DELETE FROM `productos` WHERE `productos`.`id_producto` = '$_GET[id_prod]'";
         $connection->query($eliminar_query);
     }
 
-    $query_sel = "SELECT * FROM `rayitasdb_productos` where 1";
+    $query_sel = "SELECT * FROM `productos` where 1";
     $result_sel = $connection->query($query_sel);
     $total_sel = $result_sel->num_rows;
 
